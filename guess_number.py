@@ -7,12 +7,16 @@ from tkinter import Menu
 def numero_maquina():
     print('Genial!! en esta modalidad debes adivinar un numero aleatorio generado por la maquina')
     print(' ')
-    numero_rango = randint(1,20)
+    numero_rango = randint(1,100)
     numero_jugador = int(input('Adivina un numero entre el 1 y el ' + str(numero_rango) + ': '))
     numero_maquina = randint(1,numero_rango)
     #print(str(numero_maquina))
     while numero_jugador != numero_maquina:
-        numero_jugador = int(input('Ups lo siento intenta de nuevo: '))
+        if numero_jugador < numero_maquina:
+            print('Ups lo siento intenta de nuevo con numero mas grande: ')
+        else:
+            print('Ups lo siento intenta de nuevo con numero mas pequeño: ')
+        numero_jugador = int(input())
 
     print('Felicidades adivinaste el numero')
 
